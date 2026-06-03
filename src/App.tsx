@@ -1,5 +1,5 @@
-import { Menu, X, ExternalLink, Send } from 'lucide-react'
-import { useState, type FormEvent } from 'react'
+import { Menu, X, ExternalLink } from 'lucide-react'
+import { useState } from 'react'
 
 const NAV_LINKS = [
   { label: 'Services', href: '#services' },
@@ -28,14 +28,7 @@ const PROJECTS = [
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [form, setForm] = useState({ name: '', email: '', service: '', message: '' })
-
-  const handleQuote = (e: FormEvent) => {
-    e.preventDefault()
-    const subject = `Quote Request from ${form.name} — ${form.service}`
-    const body = `Name: ${form.name}%0D%0AEmail: ${form.email}%0D%0AService: ${form.service}%0D%0A%0D%0A${form.message}`
-    window.location.href = `mailto:marcus@brandaisolutions.co.za?subject=${encodeURIComponent(subject)}&body=${body}`
-  }
+  const sent = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('sent')
 
   return (
     <div className="min-h-screen bg-bg text-white selection:bg-accent/30">
@@ -169,45 +162,62 @@ export default function App() {
             <p className="text-gray-500">Tell us what you need — we'll get back to you within 24 hours.</p>
           </div>
 
-          <form onSubmit={handleQuote} className="space-y-5">
-            <div>
-              <label className="block text-sm font-medium text-gray-400 mb-1.5">Name *</label>
-              <input type="text" required value={form.name} onChange={e => setForm({...form, name: e.target.value})}
-                placeholder="Your name"
-                className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-accent/50 transition-colors" />
+          {sent ? (
+            <div className="text-center py-12">
+              <div className="text-5xl mb-4">✅</div>
+              <h3 className="text-2xl font-bold mb-2">Thanks! We'll be in touch.</h3>
+              <p className="text-gray-400">Your quote request has been sent. We typically respond within 24 hours.</p>
             </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-400 mb-1.5">Email *</label>
-              <input type="email" required value={form.email} onChange={e => setForm({...form, email: e.target.value})}
-                placeholder="you@example.com"
-                className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-accent/50 transition-colors" />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-400 mb-1.5">Service *</label>
-              <select required value={form.service} onChange={e => setForm({...form, service: e.target.value})}
-                className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent/50 transition-colors appearance-none">
-                <option value="" className="bg-bg">Select a service</option>
-                <option value="Web Development" className="bg-bg">Web Development</option>
-                <option value="Google Business Profile" className="bg-bg">Google Business Profile</option>
-                <option value="AI Automation" className="bg-bg">AI Automation</option>
-                <option value="Custom Solutions" className="bg-bg">Custom Solutions</option>
-                <option value="AI Integration" className="bg-bg">AI Integration</option>
-                <option value="Client Portals" className="bg-bg">Client Portals</option>
-                <option value="Other" className="bg-bg">Other</option>
-              </select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-400 mb-1.5">Tell us about your project</label>
-              <textarea rows={4} value={form.message} onChange={e => setForm({...form, message: e.target.value})}
-                placeholder="Describe what you're looking for..."
-                className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-accent/50 transition-colors resize-none" />
-            </div>
-            <button type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-bg px-8 py-4 rounded-xl font-bold text-lg transition-colors">
-              <Send size={18} />
-              Send Request
-            </button>
-          </form>
+          ) : (
+            <form action="https://formsubmit.co/marcus@brandaisolutions.co.za" method="POST" className="space-y-5">
+              <input type="hidden" name="_subject" value="New Quote Request" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="box" />
+              <input type="hidden" name="_next" value="https://brandaisolutions.co.za/?sent=true" />
+              <div>
+                <label className="block text-sm font-medium text-gray-400 mb-1.5">Name *</label>
+                <input type="text" name="name" required
+                  placeholder="Your name"
+                  className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-accent/50 transition-colors" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-400 mb-1.5">Email *</label>
+                <input type="email" name="email" required
+                  placeholder="you@example.com"
+                  className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-accent/50 transition-colors" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-400 mb-1.5">Phone</label>
+                <input type="tel" name="phone"
+                  placeholder="Your phone number"
+                  className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-accent/50 transition-colors" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-400 mb-1.5">Service *</label>
+                <select name="service" required
+                  className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent/50 transition-colors appearance-none">
+                  <option value="" className="bg-bg">Select a service</option>
+                  <option value="Web Development" className="bg-bg">Web Development</option>
+                  <option value="Google Business Profile" className="bg-bg">Google Business Profile</option>
+                  <option value="AI Automation" className="bg-bg">AI Automation</option>
+                  <option value="Custom Solutions" className="bg-bg">Custom Solutions</option>
+                  <option value="AI Integration" className="bg-bg">AI Integration</option>
+                  <option value="Client Portals" className="bg-bg">Client Portals</option>
+                  <option value="Other" className="bg-bg">Other</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-400 mb-1.5">Tell us about your project</label>
+                <textarea name="message" rows={4}
+                  placeholder="Describe what you're looking for..."
+                  className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-accent/50 transition-colors resize-none" />
+              </div>
+              <button type="submit"
+                className="w-full inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-bg px-8 py-4 rounded-xl font-bold text-lg transition-colors">
+                Send Request
+              </button>
+            </form>
+          )}
         </div>
       </section>
 
