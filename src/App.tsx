@@ -32,8 +32,9 @@ export default function App() {
 
   const handleQuote = (e: FormEvent) => {
     e.preventDefault()
-    const text = `Hi Marcus,%0A%0A*Name:* ${form.name}%0A*Email:* ${form.email}%0A*Service:* ${form.service}%0A*Message:* ${form.message}%0A%0APlease send me a quote!`
-    window.open(`https://wa.me/27765626175?text=${text}`, '_blank')
+    const subject = `Quote Request from ${form.name} — ${form.service}`
+    const body = `Name: ${form.name}%0D%0AEmail: ${form.email}%0D%0AService: ${form.service}%0D%0A%0D%0A${form.message}`
+    window.location.href = `mailto:marcus@brandaisolutions.co.za?subject=${encodeURIComponent(subject)}&body=${body}`
   }
 
   return (
@@ -204,7 +205,7 @@ export default function App() {
             <button type="submit"
               className="w-full inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-bg px-8 py-4 rounded-xl font-bold text-lg transition-colors">
               <Send size={18} />
-              Send via WhatsApp
+              Send Request
             </button>
           </form>
         </div>
@@ -222,7 +223,7 @@ export default function App() {
           </p>
 
           <div id="contact" className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
-            <a href="mailto:brandsitebuilder@gmail.com" 
+            <a href="mailto:marcus@brandaisolutions.co.za" 
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-bg px-8 py-4 rounded-xl font-bold text-lg transition-colors w-full sm:w-auto justify-center">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               Email Us
@@ -248,7 +249,7 @@ export default function App() {
             </span>
           </div>
           <div className="flex items-center gap-6 text-sm text-gray-600">
-            <a href="mailto:brandsitebuilder@gmail.com" className="hover:text-gray-400 transition-colors">brandsitebuilder@gmail.com</a>
+            <a href="mailto:marcus@brandaisolutions.co.za" className="hover:text-gray-400 transition-colors">marcus@brandaisolutions.co.za</a>
             <span className="text-border-subtle">|</span>
             <span>brandaisolutions.co.za</span>
           </div>
