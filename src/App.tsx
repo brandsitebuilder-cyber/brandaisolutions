@@ -1,9 +1,10 @@
-import { Menu, X, ExternalLink } from 'lucide-react'
-import { useState } from 'react'
+import { Menu, X, ExternalLink, Send } from 'lucide-react'
+import { useState, type FormEvent } from 'react'
 
 const NAV_LINKS = [
   { label: 'Services', href: '#services' },
   { label: 'Work', href: '#portfolio' },
+  { label: 'Quote', href: '#quote' },
   { label: 'About', href: '#about' },
 ]
 
@@ -27,6 +28,13 @@ const PROJECTS = [
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [form, setForm] = useState({ name: '', email: '', service: '', message: '' })
+
+  const handleQuote = (e: FormEvent) => {
+    e.preventDefault()
+    const text = `Hi Marcus,%0A%0A*Name:* ${form.name}%0A*Email:* ${form.email}%0A*Service:* ${form.service}%0A*Message:* ${form.message}%0A%0APlease send me a quote!`
+    window.open(`https://wa.me/27765626175?text=${text}`, '_blank')
+  }
 
   return (
     <div className="min-h-screen bg-bg text-white selection:bg-accent/30">
@@ -151,6 +159,57 @@ export default function App() {
         </div>
       </section>
 
+      {/* ── GET A QUOTE ── */}
+      <section id="quote" className="py-24 md:py-32 px-6">
+        <div className="max-w-xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-3">Get Started</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Request a Quote</h2>
+            <p className="text-gray-500">Tell us what you need — we'll get back to you within 24 hours.</p>
+          </div>
+
+          <form onSubmit={handleQuote} className="space-y-5">
+            <div>
+              <label className="block text-sm font-medium text-gray-400 mb-1.5">Name *</label>
+              <input type="text" required value={form.name} onChange={e => setForm({...form, name: e.target.value})}
+                placeholder="Your name"
+                className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-accent/50 transition-colors" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-400 mb-1.5">Email *</label>
+              <input type="email" required value={form.email} onChange={e => setForm({...form, email: e.target.value})}
+                placeholder="you@example.com"
+                className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-accent/50 transition-colors" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-400 mb-1.5">Service *</label>
+              <select required value={form.service} onChange={e => setForm({...form, service: e.target.value})}
+                className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent/50 transition-colors appearance-none">
+                <option value="" className="bg-bg">Select a service</option>
+                <option value="Web Development" className="bg-bg">Web Development</option>
+                <option value="Google Business Profile" className="bg-bg">Google Business Profile</option>
+                <option value="AI Automation" className="bg-bg">AI Automation</option>
+                <option value="Custom Solutions" className="bg-bg">Custom Solutions</option>
+                <option value="AI Integration" className="bg-bg">AI Integration</option>
+                <option value="Client Portals" className="bg-bg">Client Portals</option>
+                <option value="Other" className="bg-bg">Other</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-400 mb-1.5">Tell us about your project</label>
+              <textarea rows={4} value={form.message} onChange={e => setForm({...form, message: e.target.value})}
+                placeholder="Describe what you're looking for..."
+                className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-accent/50 transition-colors resize-none" />
+            </div>
+            <button type="submit"
+              className="w-full inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-bg px-8 py-4 rounded-xl font-bold text-lg transition-colors">
+              <Send size={18} />
+              Send via WhatsApp
+            </button>
+          </form>
+        </div>
+      </section>
+
       {/* ── ABOUT + CONTACT ── */}
       <section id="about" className="py-24 md:py-32 px-6">
         <div className="max-w-3xl mx-auto text-center">
@@ -182,7 +241,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
             <div className="w-7 h-7 rounded-md bg-accent/20 flex items-center justify-center">
-              <span className="text-accent font-bold text-xs">BA</span>
+              <span className="text-accent font-bold text-xs">BAS</span>
             </div>
             <span className="text-sm text-gray-500">
               &copy; {new Date().getFullYear()} BrandAISolutions
