@@ -34,8 +34,8 @@ export default function App() {
       <nav className="fixed top-0 inset-x-0 z-50 bg-bg/80 backdrop-blur-xl border-b border-border-subtle">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
-              <span className="text-bg font-black text-sm">BA</span>
+            <div className="w-10 h-8 rounded-lg bg-accent flex items-center justify-center">
+              <span className="text-bg font-black text-xs">BAS</span>
             </div>
             <span className="font-bold text-white tracking-tight">
               Brand<span className="text-accent">AI</span>Solutions
