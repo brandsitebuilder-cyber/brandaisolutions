@@ -84,13 +84,13 @@ export default function App() {
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-6">
-            We Build<br />
-            <span className="text-accent">Digital Growth</span> Engines
+            Grow Your Business.<br />
+            <span className="text-accent">We'll Handle</span> the Tech.
           </h1>
 
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            BrandAISolutions crafts stunning websites, AI-powered tools, and automation 
-            that help businesses reach their full potential — from local services to enterprise platforms.
+            Modern websites, AI automation, and smart tools that bring in more customers —
+            so you can focus on what you do best.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
