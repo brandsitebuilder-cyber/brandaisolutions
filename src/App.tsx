@@ -22,7 +22,7 @@ const PROJECTS = [
   { title: 'RK Construction', cat: 'Professional Services', desc: 'Construction services with project gallery', url: 'https://rk-construction.vercel.app' },
   { title: 'Els Bruilof', cat: 'Weddings & Events', desc: 'Elegant wedding site with guest management', url: 'https://elsbruilof.co.za' },
   { title: 'The Boat Lab', cat: 'E-Commerce', desc: 'Full-stack store with Stripe payments', url: 'https://the-boat-lab.vercel.app' },
-  { title: 'Invoice Dashboard', cat: 'SaaS / Tools', desc: 'Client portal with auth, invoicing, Supabase', url: 'https://client-portal-beta-blush.vercel.app' },
+  { title: 'Invoice Dashboard', cat: 'SaaS / Tools', desc: 'Client portal with auth, invoicing, Supabase', url: 'https://invoicedashboard-brandsitebuilder-9030s-projects.vercel.app' },
   { title: 'Euro Motor Clinic', cat: 'Automotive', desc: 'Professional site for a vehicle service workshop', url: 'https://euro-motor-clinic.vercel.app' },
 ]
 
