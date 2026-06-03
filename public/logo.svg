@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Dark background circle -->
+  <rect width="200" height="200" rx="40" fill="#08090A"/>
+  
+  <!-- Bronze/gold geometric mark -->
+  <!-- AI spark/node symbol in bronze -->
+  <g transform="translate(100,100)">
+    <!-- Central diamond AI node -->
+    <rect x="-28" y="-28" width="56" height="56" rx="12" fill="#C8963E" transform="rotate(45)"/>
+    
+    <!-- Inner cutout -->
+    <rect x="-16" y="-16" width="32" height="32" rx="7" fill="#08090A" transform="rotate(45)"/>
+    
+    <!-- BAS lettering inside -->
+    <text x="0" y="6" text-anchor="middle" dominant-baseline="middle" 
+          font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="20" fill="#C8963E">
+      BAS
+    </text>
+  </g>
+</svg>
