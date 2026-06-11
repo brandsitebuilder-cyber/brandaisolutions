@@ -28,7 +28,39 @@ const PROJECTS = [
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
   const sent = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('sent')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setSubmitting(true)
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    try {
+      const res = await fetch('https://quotehub-theta.vercel.app/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          client_slug: 'brandaisolutions',
+          customer_name: formData.get('name'),
+          customer_email: formData.get('email'),
+          customer_phone: formData.get('phone'),
+          service_type: formData.get('service'),
+          message: formData.get('message'),
+          source_url: window.location.origin,
+        }),
+      })
+      if (res.ok) {
+        window.location.href = '?sent=true'
+      } else {
+        alert('Something went wrong. Please try again.')
+      }
+    } catch {
+      alert('Something went wrong. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-bg text-white selection:bg-accent/30">
@@ -169,11 +201,7 @@ export default function App() {
               <p className="text-gray-400">Your quote request has been sent. We typically respond within 24 hours.</p>
             </div>
           ) : (
-            <form action="https://formsubmit.co/marcus@brandaisolutions.co.za" method="POST" className="space-y-5">
-              <input type="hidden" name="_subject" value="New Quote Request" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="box" />
-              <input type="hidden" name="_next" value="https://brandaisolutions.co.za/?sent=true" />
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="block text-sm font-medium text-gray-400 mb-1.5">Name *</label>
                 <input type="text" name="name" required
@@ -212,9 +240,9 @@ export default function App() {
                   placeholder="Describe what you're looking for..."
                   className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-accent/50 transition-colors resize-none" />
               </div>
-              <button type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-bg px-8 py-4 rounded-xl font-bold text-lg transition-colors">
-                Send Request
+              <button type="submit" disabled={submitting}
+                className="w-full inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-bg px-8 py-4 rounded-xl font-bold text-lg transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
+                {submitting ? 'Sending...' : 'Send Request'}
               </button>
             </form>
           )}
