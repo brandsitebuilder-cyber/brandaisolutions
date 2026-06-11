@@ -36,19 +36,28 @@ export default function App() {
     setSubmitting(true)
     const form = e.currentTarget
     const formData = new FormData(form)
+
+    // Map known fields + collect everything else as custom fields
+    const body: Record<string,string> = {
+      client_slug: 'brandaisolutions',
+      customer_name: String(formData.get('name') || ''),
+      customer_email: String(formData.get('email') || ''),
+      customer_phone: String(formData.get('phone') || ''),
+      service_type: String(formData.get('service') || ''),
+      message: String(formData.get('message') || ''),
+      source_url: window.location.origin,
+    }
+    // Capture any extra named fields not already mapped
+    const KNOWN = new Set(['name','email','phone','service','message'])
+    formData.forEach((val, key) => {
+      if (!KNOWN.has(key) && val) body[key] = String(val)
+    })
+
     try {
       const res = await fetch('https://quotehub-theta.vercel.app/api/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          client_slug: 'brandaisolutions',
-          customer_name: formData.get('name'),
-          customer_email: formData.get('email'),
-          customer_phone: formData.get('phone'),
-          service_type: formData.get('service'),
-          message: formData.get('message'),
-          source_url: window.location.origin,
-        }),
+        body: JSON.stringify(body),
       })
       if (res.ok) {
         window.location.href = '?sent=true'
