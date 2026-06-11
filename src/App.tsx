@@ -47,7 +47,6 @@ export default function App() {
           customer_phone: formData.get('phone'),
           service_type: formData.get('service'),
           message: formData.get('message'),
-          timeline: formData.get('timeline'),
           source_url: window.location.origin,
         }),
       })
@@ -236,15 +235,12 @@ export default function App() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1.5">Timeline</label>
-                <select name="timeline"
+                <label className="block text-sm font-medium text-gray-400 mb-1.5">Current website?</label>
+                <select name="current_website"
                   className="w-full bg-white/[0.03] border border-border-subtle rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent/50 transition-colors appearance-none">
-                  <option value="" className="bg-bg">Select timeline</option>
-                  <option value="ASAP" className="bg-bg">ASAP</option>
-                  <option value="Within 1 month" className="bg-bg">Within 1 month</option>
-                  <option value="1-2 months" className="bg-bg">1–2 months</option>
-                  <option value="3+ months" className="bg-bg">3+ months</option>
-                  <option value="Just exploring" className="bg-bg">Just exploring</option>
+                  <option value="" className="bg-bg">Select</option>
+                  <option value="Yes" className="bg-bg">Yes, I have one</option>
+                  <option value="No" className="bg-bg">No, I need one</option>
                 </select>
               </div>
               <div>
