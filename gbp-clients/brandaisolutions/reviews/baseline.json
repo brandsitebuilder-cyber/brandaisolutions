@@ -1,0 +1,54 @@
+{
+  "place_id": "ChIJj9ROOuImSkfTA91rP9FTRA",
+  "business_name": "Brand AI Solutions",
+  "last_checked": "2026-06-22T12:00:00Z",
+  "total_reviews": null,
+  "average_rating": null,
+  "known_reviews": [],
+  "review_history": [],
+  "_status": "LIMITED_VIEW — Google Maps requires sign-in or Places API to access review data. All access methods exhausted.",
+  "_checks": [
+    {
+      "timestamp": "2026-06-17T10:19:49Z",
+      "method": "browser_maps_cid_url",
+      "result": "LIMITED_VIEW",
+      "note": "CID URL navigated successfully to listing but star rating and review count not visible without Google sign-in. Also tried search.google.com/local/reviews (404) and web search (no review data found)."
+    },
+    {
+      "timestamp": "2026-06-17T19:00:00Z",
+      "method": "all_methods_exhausted",
+      "result": "LIMITED_VIEW",
+      "note": "Tried: (1) maps place_id URL → redirected to generic view, (2) maps CID URL → listing loaded but 'You're seeing a limited view' — no rating/reviews, (3) search.google.com/local/reviews → 404, (4) search.google.com/local/writereview → Google sign-in required, (5) web search → no relevant Google review data. Cannot access reviews without Google sign-in or Places API integration."
+    },
+    {
+      "timestamp": "2026-06-17T23:00:00Z",
+      "method": "all_methods_exhausted",
+      "result": "LIMITED_VIEW",
+      "note": "Reconfirmed: (1) maps place_id URL → redirected to generic view, (2) maps CID URL → listing loads, shows 'Brand AI Solutions' with correct info (hours, website, phone) but 'You're seeing a limited view' — no star rating, review count, or individual review text visible, (3) search.google.com/local/reviews → 404, (4) web search → no Brand AI Solutions review data found. No change from prior checks. Google sign-in or Places API required."
+    },
+    {
+      "timestamp": "2026-06-18T20:00:00Z",
+      "method": "all_methods_exhausted",
+      "result": "LIMITED_VIEW",
+      "note": "Reconfirmed: (1) maps place_id URL → generic map view, no listing, (2) maps CID URL → shows 'Brand AI Solutions' listing (hours: Open 24h, phone: 082 746 1928, website: brandaisolutions.co.za) but 'You're seeing a limited view of Google Maps' — no star rating, no review count, no individual reviews, (3) browser console check for embedded JSON-LD/structured data → none found, (4) web search → not configured (FIRECRAWL_API_KEY missing). No change from prior checks. Google sign-in or Places API required."
+    },
+    {
+      "timestamp": "2026-06-19T00:00:00Z",
+      "method": "browser_maps_cid_url",
+      "result": "LIMITED_VIEW",
+      "note": "CID URL → listing loads with business details (hours, phone, website) but 'You're seeing a limited view of Google Maps.' No star rating, review count, or individual reviews visible. Six consecutive checks with identical result. Action needed: set up Google Places API key or authenticated browser session to break through limited view."
+    },
+    {
+      "timestamp": "2026-06-19T20:00:00Z",
+      "method": "browser_maps_cid_url",
+      "result": "LIMITED_VIEW",
+      "note": "CID URL → listing loads with business details (hours, phone, website, 'Write a review' button present) but 'You're seeing a limited view of Google Maps.' No star rating, review count, or individual reviews visible. No JSON-LD structured data found in page. Web search unavailable (FIRECRAWL_API_KEY not configured). Seventh consecutive check with identical result. Action needed: set up Google Places API key or authenticated browser session."
+    },
+    {
+      "timestamp": "2026-06-22T12:00:00Z",
+      "method": "firecrawl_scrape_cid_url",
+      "result": "LIMITED_VIEW",
+      "note": "CID URL scraped via Firecrawl. Listing loads with correct business details (name, phone, website, 24h hours) but no star rating, no review count, no individual reviews visible. 'You're seeing a limited view of Google Maps.' Eighth consecutive check with identical result. URGENT: Google sign-in or Places API key required to access any review data for this client."
+    }
+  ]
+}

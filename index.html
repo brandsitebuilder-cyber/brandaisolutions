@@ -1,56 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrandAISolutions | Websites, AI & Dashboards — Durbanville, Cape Town</title>
+<meta name="description" content="BrandAISolutions helps businesses grow with modern websites, AI automation, and custom dashboards. Based in Durbanville, serving Cape Town Northern Suburbs. Free quotes.">
+<meta name="keywords" content="web design Durbanville, AI automation Cape Town, custom dashboards, web development Northern Suburbs, business growth">
+<meta property="og:title" content="BrandAISolutions | Websites, AI & Dashboards">
+<meta property="og:description" content="We build what others can't — modern websites, AI-powered dashboards, and intelligent automation for businesses that want more than a template.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://brandaisolutions.co.za">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2308090A'/><text x='16' y='22' text-anchor='middle' font-size='18' font-family='sans-serif' font-weight='bold' fill='%23C8963E'>B</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#08090A;--bg-elevated:#0F1011;--bg-hover:#141516;
+  --border-subtle:rgba(200,150,62,0.06);--border-strong:rgba(200,150,62,0.12);
+  --text-primary:#F7F8F8;--text-secondary:#9CA3AF;--text-muted:#6B7280;
+  --accent:#C8963E;--accent-glow:rgba(200,150,62,0.1);--accent-strong:#D4A84B;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+  --max-width:1200px;--section-pad:6rem;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text-secondary);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 2rem}
+h1,h2,h3{color:var(--text-primary);line-height:1.15}
+h1{font-size:clamp(2.5rem,5.5vw,5rem);font-weight:800;letter-spacing:-0.02em}
+h2{font-size:clamp(2rem,4vw,2.75rem);font-weight:700;letter-spacing:-0.01em}
+h3{font-size:1.125rem;font-weight:600}
+a{color:inherit;text-decoration:none}
+.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:var(--bg);padding:0.875rem 2rem;font-weight:700;font-size:0.9375rem;border-radius:8px;transition:all 0.25s;border:none;cursor:pointer;font-family:var(--font)}
+.btn-primary:hover{background:var(--accent-strong);transform:translateY(-1px);box-shadow:0 8px 24px var(--accent-glow)}
+.btn-secondary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--bg-elevated);color:var(--text-primary);padding:0.875rem 2rem;font-weight:600;font-size:0.9375rem;border-radius:8px;border:1px solid var(--border-strong);transition:all 0.25s;cursor:pointer;font-family:var(--font)}
+.btn-secondary:hover{background:var(--bg-hover);border-color:var(--accent)}
+section{padding:var(--section-pad) 0}
+.section-header{text-align:center;margin-bottom:3.5rem}
+.section-header h2{margin-bottom:0.75rem}
+.section-header .accent-line{width:48px;height:3px;background:var(--accent);margin:1rem auto 0;border-radius:2px}
+.section-header p{font-size:1.0625rem;color:var(--text-muted);max-width:600px;margin:0 auto}
+@media(max-width:768px){:root{--section-pad:4rem}.container{padding:0 1.25rem}}
 
-    <!-- Primary SEO -->
-    <title>BrandAISolutions | Websites, AI & Google Business Profile — Durbanville, Cape Town</title>
-    <meta name="description" content="BrandAISolutions helps businesses grow with modern websites, AI automation, and Google Business Profile optimization. Based in Durbanville, serving Cape Town Northern Suburbs. Free quotes." />
-    <meta name="keywords" content="web design Durbanville, AI automation Cape Town, Google Business Profile, web development Northern Suburbs, business growth, app development" />
-    <link rel="canonical" href="https://brandaisolutions.co.za" />
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;background:rgba(8,9,10,0.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border-subtle)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+nav .brand{font-size:1.25rem;font-weight:800;color:var(--text-primary);letter-spacing:-0.01em}
+nav .brand span{color:var(--accent)}
+nav .nav-links{display:flex;gap:2rem;align-items:center}
+nav .nav-links a{font-size:0.875rem;font-weight:500;color:var(--text-secondary);transition:color 0.2s}
+nav .nav-links a:hover{color:var(--text-primary)}
+nav .nav-cta{font-size:0.8125rem!important;padding:0.5rem 1.25rem;background:var(--accent);color:var(--bg)!important;border-radius:6px;font-weight:700!important}
+@media(max-width:768px){nav .nav-links{display:none}}
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="BrandAISolutions | Websites, AI & Google Business Profile" />
-    <meta property="og:description" content="We help businesses grow with modern websites, AI automation, and Google Business Profile optimization. Free quotes — no obligation." />
-    <meta property="og:url" content="https://brandaisolutions.co.za" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="BrandAISolutions" />
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding-top:5rem}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:0.08;pointer-events:none}
+.hero-orb-1{width:600px;height:600px;background:var(--accent);top:-200px;right:-200px;animation:orbFloat 20s ease-in-out infinite}
+.hero-orb-2{width:400px;height:400px;background:var(--accent);bottom:-100px;left:-100px;animation:orbFloat 25s ease-in-out infinite reverse}
+@keyframes orbFloat{0%,100%{transform:translate(0,0)}33%{transform:translate(40px,-30px)}66%{transform:translate(-20px,20px)}}
+.hero-content{position:relative;z-index:1;max-width:800px}
+.hero-avail{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8125rem;font-weight:600;color:#22C55E;background:rgba(34,197,94,0.08);padding:0.375rem 1rem;border-radius:100px;margin-bottom:2rem;border:1px solid rgba(34,197,94,0.15);letter-spacing:0.02em}
+.hero-avail .dot{width:6px;height:6px;background:#22C55E;border-radius:50%;animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{margin-bottom:1.5rem}
+.hero h1 .bronze{color:var(--accent)}
+.hero .subtitle{font-size:1.125rem;color:var(--text-secondary);margin-bottom:2.5rem;max-width:580px;margin-inline:auto;line-height:1.7}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="BrandAISolutions | Websites, AI & Google Business Profile" />
-    <meta name="twitter:description" content="We help businesses grow with modern websites, AI automation, and Google Business Profile optimization. Free quotes." />
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-subtle);border-radius:16px;overflow:hidden;border:1px solid var(--border-subtle)}
+.service-card{background:var(--bg-elevated);padding:2.5rem 2rem;transition:all 0.3s;cursor:default;text-align:center}
+.service-card:hover{background:var(--bg-hover);box-shadow:inset 0 0 0 1px var(--border-strong)}
+.service-card .icon{font-size:2.5rem;margin-bottom:1rem;display:block}
+.service-card h3{font-size:1.0625rem;margin-bottom:0.5rem}
+.service-card p{font-size:0.875rem;color:var(--text-muted);line-height:1.5}
+@media(max-width:768px){.services-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.services-grid{grid-template-columns:1fr}}
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "BrandAISolutions",
-      "description": "Web development, AI automation, and Google Business Profile optimization for small businesses.",
-      "url": "https://brandaisolutions.co.za",
-      "email": "marcus@brandaisolutions.co.za",
-      "telephone": "+27765626175",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Durbanville",
-        "addressRegion": "Western Cape",
-        "addressCountry": "ZA"
-      },
-      "areaServed": ["Durbanville", "Bellville", "Brackenfell", "Kuils River", "Northern Suburbs Cape Town"],
-      "priceRange": "R2,000 - R20,000",
-      "sameAs": ["https://wa.me/27765626175"]
-    }
-    </script>
+/* PORTFOLIO */
+.portfolio-tabs{display:flex;gap:0.5rem;margin-bottom:2.5rem;flex-wrap:wrap;justify-content:center}
+.portfolio-tab{padding:0.5rem 1.25rem;border-radius:100px;font-size:0.8125rem;font-weight:500;cursor:pointer;transition:all 0.2s;background:var(--bg-elevated);color:var(--text-secondary);border:1px solid var(--border-subtle);font-family:var(--font)}
+.portfolio-tab:hover{background:var(--bg-hover);color:var(--text-primary)}
+.portfolio-tab.active{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:700}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.portfolio-card{background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:12px;overflow:hidden;transition:all 0.3s}
+.portfolio-card:hover{transform:translateY(-3px);border-color:var(--border-strong);box-shadow:0 12px 32px rgba(0,0,0,0.3)}
+.portfolio-card .thumb{aspect-ratio:16/10;background:var(--bg-hover);display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative;overflow:hidden}
+.portfolio-card .thumb .overlay{position:absolute;inset:0;background:rgba(200,150,62,0.05)}
+.portfolio-card .info{padding:1.25rem}
+.portfolio-card .info .cat{font-size:0.6875rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.05em;font-weight:600;margin-bottom:0.375rem}
+.portfolio-card .info h3{font-size:1rem;margin-bottom:0.25rem}
+.portfolio-card .info .link{font-size:0.8125rem;color:var(--text-muted);display:inline-flex;align-items:center;gap:0.25rem;transition:color 0.2s}
+.portfolio-card .info .link:hover{color:var(--accent)}
+.portfolio-card.hidden{display:none}
+@media(max-width:768px){.portfolio-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.portfolio-grid{grid-template-columns:1fr}}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+/* DASHBOARD SHOWCASE */
+.dash-section{background:var(--bg-elevated);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)}
+.dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem}
+.dash-card{background:var(--bg);border:1px solid var(--border-subtle);border-radius:16px;overflow:hidden;transition:all 0.3s}
+.dash-card:hover{border-color:var(--border-strong)}
+.dash-card .frame{position:relative;padding:1.5rem;background:linear-gradient(180deg,rgba(200,150,62,0.03),transparent)}
+.dash-card .frame .mac-dots{display:flex;gap:6px;margin-bottom:0.75rem}
+.dash-card .frame .mac-dots span{width:10px;height:10px;border-radius:50%}
+.dash-card .frame .mac-dots span:nth-child(1){background:#FF5F57}
+.dash-card .frame .mac-dots span:nth-child(2){background:#FFBD2E}
+.dash-card .frame .mac-dots span:nth-child(3){background:#27CA40}
+.dash-card .frame img{width:100%;border-radius:8px;border:1px solid var(--border-subtle)}
+.dash-card .dash-info{padding:1.25rem 1.5rem 1.5rem}
+.dash-card .dash-info h3{font-size:1.0625rem;margin-bottom:0.5rem}
+.dash-card .dash-info ul{list-style:none;display:flex;flex-wrap:wrap;gap:0.5rem}
+.dash-card .dash-info ul li{font-size:0.75rem;color:var(--text-muted);background:var(--bg-elevated);padding:0.25rem 0.75rem;border-radius:100px;border:1px solid var(--border-subtle)}
+.tech-badges{display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap}
+.tech-badge{padding:0.5rem 1.25rem;background:var(--bg);border:1px solid var(--border-strong);border-radius:100px;font-size:0.8125rem;color:var(--accent);font-weight:600}
+@media(max-width:768px){.dash-grid{grid-template-columns:1fr}}
+
+/* PROCESS */
+.process-row{display:flex;gap:2rem;position:relative;max-width:900px;margin:0 auto}
+.process-row::before{content:'';position:absolute;top:2rem;left:3rem;right:3rem;height:2px;background:var(--accent);opacity:0.2}
+.process-step{flex:1;text-align:center;position:relative;z-index:1}
+.process-step .num{width:4rem;height:4rem;border-radius:50%;background:var(--bg-elevated);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:var(--accent);margin:0 auto 1rem}
+.process-step h3{font-size:0.9375rem;margin-bottom:0.375rem}
+.process-step p{font-size:0.8125rem;color:var(--text-muted);line-height:1.5}
+@media(max-width:768px){.process-row{flex-direction:column;gap:1.5rem}.process-row::before{display:none}}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-text h2{margin-bottom:1.25rem}
+.about-text .greeting{font-size:1.5rem;font-weight:700;color:var(--accent);margin-bottom:0.5rem}
+.about-text p{font-size:1rem;color:var(--text-secondary);line-height:1.8;margin-bottom:1rem}
+.about-text .location{display:inline-flex;align-items:center;gap:0.375rem;font-size:0.875rem;color:var(--text-muted)}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border-subtle);border-radius:12px;overflow:hidden;border:1px solid var(--border-subtle)}
+.about-stat{background:var(--bg-elevated);padding:2rem;text-align:center}
+.about-stat .num{font-size:2.25rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:0.375rem}
+.about-stat .lbl{font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;font-weight:500}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:2rem}}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:0.375rem}
+.form-group label{font-size:0.8125rem;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.05em}
+.form-group input,.form-group select,.form-group textarea{background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:8px;padding:0.875rem 1rem;color:var(--text-primary);font-family:var(--font);font-size:0.9375rem;transition:border-color 0.2s;resize:vertical}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--accent)}
+.form-group input.error,.form-group select.error,.form-group textarea.error{border-color:#EF4444}
+.form-error{font-size:0.75rem;color:#EF4444;display:none}
+.form-error.visible{display:block}
+.form-success{display:none;background:var(--accent-glow);border:1px solid var(--border-strong);border-radius:12px;padding:2rem;text-align:center}
+.form-success.visible{display:block}
+.form-success .check{font-size:3rem;margin-bottom:0.75rem}
+.form-success h3{color:var(--accent);margin-bottom:0.5rem}
+.contact-info{display:flex;flex-direction:column;gap:1.25rem}
+.contact-card{display:flex;align-items:center;gap:1rem;background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:12px;padding:1.25rem 1.5rem;transition:all 0.2s}
+.contact-card:hover{border-color:var(--border-strong)}
+.contact-card .icon{font-size:1.5rem;flex-shrink:0}
+.contact-card .info h3{font-size:0.9375rem;margin-bottom:0.125rem}
+.contact-card .info a,.contact-card .info span{font-size:0.875rem;color:var(--text-muted)}
+.contact-card .info a:hover{color:var(--accent)}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr;gap:3rem}}
+
+/* FOOTER */
+footer{text-align:center;padding:3rem 0;border-top:1px solid var(--border-subtle)}
+footer .brand{font-size:1.25rem;font-weight:800;color:var(--text-primary);margin-bottom:0.5rem}
+footer .brand span{color:var(--accent)}
+footer p{font-size:0.8125rem;color:var(--text-muted)}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.3);transition:transform 0.2s,box-shadow 0.2s}
+.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(37,211,102,0.4)}
+.whatsapp-float svg{width:28px;height:28px}
+
+/* CONFETTI */
+.confetti-container{position:fixed;inset:0;pointer-events:none;z-index:300}
+.confetti-piece{position:absolute;width:8px;height:8px;border-radius:2px;animation:confetti-fall 1.5s ease-out forwards}
+@keyframes confetti-fall{0%{transform:translateY(-10vh) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a href="#hero" class="brand">Brand<span>AI</span>Solutions</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Work</a>
+      <a href="#dashboards">Dashboards</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Start a Project</a>
+    </div>
+  </div>
+</nav>
+
+<!-- SECTION 1: HERO -->
+<section class="hero" id="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-avail"><span class="dot"></span> Available for new projects</span>
+      <h1>Grow Your Business.<br><span class="bronze">We'll Handle</span> the Tech.</h1>
+      <p class="subtitle">Modern websites, AI automation, and smart tools that bring in more customers — so you can focus on what you do best.</p>
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn-primary">See Our Work ↓</a>
+        <a href="#contact" class="btn-secondary">Start a Project →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <h2>What We Build</h2>
+      <p>Everything you need to grow your business online — from stunning websites to intelligent automation.</p>
+      <div class="accent-line"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="icon">🖥️</span><h3>Web Development</h3><p>Custom websites built with React, Next.js & Tailwind — fast, modern, SEO-ready.</p></div>
+      <div class="service-card"><span class="icon">📍</span><h3>Google Business Profile</h3><p>Setup, optimization, and AI-powered review management for local SEO dominance.</p></div>
+      <div class="service-card"><span class="icon">🤖</span><h3>AI Automation</h3><p>Smart workflows and AI agents that save time, reduce costs, and drive revenue.</p></div>
+      <div class="service-card"><span class="icon">📊</span><h3>Custom Dashboards</h3><p>Client portals, inventory systems, CRM tools — tailored to your exact business needs.</p></div>
+      <div class="service-card"><span class="icon">🧠</span><h3>AI Integration</h3><p>Embed AI into your existing business processes — chatbots, analytics, automation.</p></div>
+      <div class="service-card"><span class="icon">🔐</span><h3>Client Portals</h3><p>Invoicing, dashboards, and business management platforms with secure auth.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-header">
+      <h2>Selected Work</h2>
+      <p>A curated selection of websites, tools, and platforms we've built for our clients.</p>
+      <div class="accent-line"></div>
+    </div>
+    <div class="portfolio-tabs">
+      <button class="portfolio-tab active" data-cat="all">All</button>
+      <button class="portfolio-tab" data-cat="websites">Websites</button>
+      <button class="portfolio-tab" data-cat="dashboards">Dashboards</button>
+      <button class="portfolio-tab" data-cat="ecommerce">E-Commerce</button>
+    </div>
+    <div class="portfolio-grid">
+      <a href="https://pieterhuizen-website.vercel.app" target="_blank" rel="noopener" class="portfolio-card" data-cat="websites">
+        <div class="thumb"><span>🏛️</span><div class="overlay"></div></div>
+        <div class="info"><span class="cat">Professional Services</span><h3>Pieterhuizen Planning</h3><span class="link">View Site →</span></div>
+      </a>
+      <a href="https://rk-construction.vercel.app" target="_blank" rel="noopener" class="portfolio-card" data-cat="websites">
+        <div class="thumb"><span>🏗️</span><div class="overlay"></div></div>
+        <div class="info"><span class="cat">Construction</span><h3>RK Construction</h3><span class="link">View Site →</span></div>
+      </a>
+      <a href="https://elsbruilof.co.za" target="_blank" rel="noopener" class="portfolio-card" data-cat="websites">
+        <div class="thumb"><span>💍</span><div class="overlay"></div></div>
+        <div class="info"><span class="cat">Weddings & Events</span><h3>Els Bruilof</h3><span class="link">View Site →</span></div>
+      </a>
+      <a href="https://the-boat-lab.vercel.app" target="_blank" rel="noopener" class="portfolio-card" data-cat="ecommerce">
+        <div class="thumb"><span>🛒</span><div class="overlay"></div></div>
+        <div class="info"><span class="cat">E-Commerce</span><h3>The Boat Lab</h3><span class="link">View Site →</span></div>
+      </a>
+      <a href="https://omnia-pharma-redesign.vercel.app" target="_blank" rel="noopener" class="portfolio-card" data-cat="websites">
+        <div class="thumb"><span>💊</span><div class="overlay"></div></div>
+        <div class="info"><span class="cat">Pharmaceutical</span><h3>Omnia Pharma</h3><span class="link">View Site →</span></div>
+      </a>
+      <a href="https://euro-motor-clinic.vercel.app" target="_blank" rel="noopener" class="portfolio-card" data-cat="websites">
+        <div class="thumb"><span>🔧</span><div class="overlay"></div></div>
+        <div class="info"><span class="cat">Automotive</span><h3>Euro Motor Clinic</h3><span class="link">View Site →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: DASHBOARD SHOWCASE -->
+<section class="dash-section" id="dashboards">
+  <div class="container">
+    <div class="section-header">
+      <h2>We Build Dashboards, Not Just Websites</h2>
+      <p>Custom tools that run your business — client portals, inventory systems, AI agents. Here's what we've built.</p>
+      <div class="accent-line"></div>
+    </div>
+    <div class="dash-grid">
+      <div class="dash-card">
+        <div class="frame">
+          <div class="mac-dots"><span></span><span></span><span></span></div>
+          <img src="assets/clienthub-dashboard.png" alt="ClientHub - Client CRM Dashboard" loading="lazy">
+        </div>
+        <div class="dash-info">
+          <h3>ClientHub — CRM Dashboard</h3>
+          <ul>
+            <li>Client management</li>
+            <li>Status tracking</li>
+            <li>Search & filters</li>
+            <li>Supabase + Next.js</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dash-card">
+        <div class="frame">
+          <div class="mac-dots"><span></span><span></span><span></span></div>
+          <img src="assets/stock-dashboard.png" alt="Stock Management Dashboard" loading="lazy">
+        </div>
+        <div class="dash-info">
+          <h3>Stock Management — Inventory System</h3>
+          <ul>
+            <li>Product tracking</li>
+            <li>Order management</li>
+            <li>Stock level alerts</li>
+            <li>Real-time updates</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dash-card">
+        <div class="frame">
+          <div class="mac-dots"><span></span><span></span><span></span></div>
+          <img src="assets/invoice-dashboard.png" alt="Invoice Dashboard" loading="lazy">
+        </div>
+        <div class="dash-info">
+          <h3>Invoice Dashboard — Client Portal</h3>
+          <ul>
+            <li>Invoice tracking</li>
+            <li>Client portal auth</li>
+            <li>Payment status</li>
+            <li>Supabase + Next.js</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tech-badges">
+      <span class="tech-badge">Supabase</span>
+      <span class="tech-badge">Next.js</span>
+      <span class="tech-badge">React</span>
+      <span class="tech-badge">Tailwind CSS</span>
+      <span class="tech-badge">AI Agents</span>
+      <span class="tech-badge">Automation</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: HOW IT WORKS -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <h2>How We Work</h2>
+      <p>From idea to launch — a proven process that delivers results.</p>
+      <div class="accent-line"></div>
+    </div>
+    <div class="process-row">
+      <div class="process-step">
+        <div class="num">①</div>
+        <h3>Discovery</h3>
+        <p>We learn about your business, goals, and what you need built.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">②</div>
+        <h3>Design</h3>
+        <p>Custom designs tailored to your brand — no templates, no clones.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">③</div>
+        <h3>Build</h3>
+        <p>Modern stack, clean code, real-time previews as we build.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">④</div>
+        <h3>Launch</h3>
+        <p>Deploy, test, hand over — with ongoing support if you need it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="greeting">Hi, I'm Marcus</div>
+        <h2>Your Partner in Digital Growth</h2>
+        <p>I don't just build websites — I help businesses reach their full potential through stunning design, smart automation, and AI-powered tools. Whether you're a local service or scaling enterprise, I'm invested in your success.</p>
+        <p>Every project gets my full attention — from the first conversation to long after launch. You're not getting a template. You're getting a partner.</p>
+        <span class="location">📍 Based in Durbanville, serving Cape Town Northern Suburbs</span>
+      </div>
+      <div class="about-stats">
+        <div class="about-stat"><div class="num" data-target="15">0</div><div class="lbl">Clients Served</div></div>
+        <div class="about-stat"><div class="num" data-target="20">0</div><div class="lbl">Projects Delivered</div></div>
+        <div class="about-stat"><div class="num" data-target="5">0</div><div class="lbl">Google Rating</div></div>
+        <div class="about-stat"><div class="num" data-target="4">0</div><div class="lbl">Years Experience</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Start Your Project</h2>
+      <p>Tell us what you need — we'll get back to you within 24 hours with a detailed, no-obligation quote.</p>
+      <div class="accent-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label>Name *</label>
+            <input type="text" placeholder="Your full name" required>
+            <span class="form-error">Please enter your name</span>
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" placeholder="you@example.com" required>
+            <span class="form-error">Please enter a valid email</span>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" placeholder="082 123 4567">
+          </div>
+          <div class="form-group">
+            <label>Service *</label>
+            <select required>
+              <option value="">Select a service</option>
+              <option>Web Development</option>
+              <option>Google Business Profile</option>
+              <option>AI Automation</option>
+              <option>Custom Dashboards</option>
+              <option>AI Integration</option>
+              <option>Client Portals</option>
+              <option>Other</option>
+            </select>
+            <span class="form-error">Please select a service</span>
+          </div>
+          <div class="form-group">
+            <label>Tell us about your project</label>
+            <textarea rows="3" placeholder="Briefly describe what you need..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Send Request →</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="check">✅</div>
+          <h3>Request Sent!</h3>
+          <p style="color:var(--text-secondary);font-size:0.9375rem">We'll review your project and get back to you within 24 hours. For urgent enquiries, WhatsApp us on <strong style="color:var(--accent)">082 746 1928</strong>.</p>
+        </div>
+      </div>
+      <div class="contact-info">
+        <a href="mailto:marcus@brandaisolutions.co.za" class="contact-card">
+          <span class="icon">✉️</span>
+          <div class="info"><h3>Email</h3><span>marcus@brandaisolutions.co.za</span></div>
+        </a>
+        <a href="tel:27827461928" class="contact-card">
+          <span class="icon">📞</span>
+          <div class="info"><h3>Phone</h3><span>082 746 1928</span></div>
+        </a>
+        <a href="https://wa.me/27827461928" class="contact-card">
+          <span class="icon">💬</span>
+          <div class="info"><h3>WhatsApp</h3><span>Chat Now</span></div>
+        </a>
+        <div style="background:var(--accent-glow);border:1px solid var(--border-strong);border-radius:12px;padding:1.5rem;text-align:center;margin-top:0.5rem">
+          <p style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:0.75rem">Free quotations — no obligation, no pressure.</p>
+          <span style="font-size:0.8125rem;color:var(--accent);font-weight:600">Based in Durbanville, Cape Town</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="brand">Brand<span>AI</span>Solutions</div>
+    <p>© 2026 BrandAISolutions. Durbanville, Cape Town.</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/27827461928" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// Stats animation
+const stats=document.querySelectorAll('.about-stat .num');let sd=false;
+function as(){if(sd)return;sd=true;stats.forEach(s=>{const t=parseFloat(s.dataset.target),d=1500,st=performance.now();
+function u(n){const p=Math.min((n-st)/d,1),e=1-Math.pow(1-p,3),c=t*e;s.textContent=Math.floor(c);if(p<1)requestAnimationFrame(u)}requestAnimationFrame(u)})}
+setTimeout(as,500);
+
+// Portfolio filter
+document.querySelectorAll('.portfolio-tab').forEach(tb=>{tb.addEventListener('click',()=>{
+  document.querySelectorAll('.portfolio-tab').forEach(t=>t.classList.remove('active'));
+  tb.classList.add('active');const c=tb.dataset.cat;
+  document.querySelectorAll('.portfolio-card').forEach(cd=>cd.classList.toggle('hidden',c!=='all'&&cd.dataset.cat!==c))
+})});
+
+// Form
+const f=document.getElementById('contactForm'),sf=document.getElementById('formSuccess');
+f.addEventListener('submit',e=>{e.preventDefault();let v=true;
+  f.querySelectorAll('[required]').forEach(fd=>{const g=fd.closest('.form-group'),er=g.querySelector('.form-error');
+    if(!fd.value.trim()){fd.classList.add('error');er.classList.add('visible');v=false}
+    else{fd.classList.remove('error');er.classList.remove('visible')}});
+  if(v){const ct=document.createElement('div');ct.className='confetti-container';
+    const cl=['#C8963E','#D4A84B','#F59E0B','#22C55E','#3B82F6','#EF4444'];
+    for(let i=0;i<50;i++){const p=document.createElement('div');p.className='confetti-piece';
+      p.style.left=Math.random()*100+'%';p.style.animationDelay=Math.random()*0.8+'s';
+      p.style.animationDuration=(1+Math.random()*1.5)+'s';
+      p.style.backgroundColor=cl[Math.floor(Math.random()*cl.length)];ct.appendChild(p)}
+    document.body.appendChild(ct);setTimeout(()=>ct.remove(),2500);
+    f.style.display='none';sf.classList.add('visible')}
+});
+f.querySelectorAll('input,select,textarea').forEach(fd=>{fd.addEventListener('input',()=>{
+  fd.classList.remove('error');const er=fd.closest('.form-group').querySelector('.form-error');if(er)er.classList.remove('visible')
+})});
+
+// Click tracking
+(function(){const U='https://quotehub-theta.vercel.app/api/track';
+function t(type,label){try{fetch(U,{method:'POST',headers:{'Content-Type':'application/json'},
+  body:JSON.stringify({site:'brandaisolutions',type,label:label||type,url:location.href,timestamp:new Date().toISOString()}),mode:'no-cors'})}catch(e){}}
+window.trackClick=t;
+document.querySelectorAll('a[href^="tel:"]').forEach(l=>l.addEventListener('click',()=>t('call','phone')));
+document.querySelectorAll('a[href*="wa.me"]').forEach(l=>l.addEventListener('click',()=>t('whatsapp','wa')))})();
+</script>
+</body>
 </html>

@@ -1,0 +1,18 @@
+{
+  "place_id": "ChIJHcxRI0AMNYtViSws-2lBJA",
+  "business_name": "Eltec Electrical (Pty) Ltd",
+  "last_checked": "2026-06-22T12:00:00Z",
+  "total_reviews": null,
+  "average_rating": "4.8",
+  "known_reviews": [],
+  "review_history": [],
+  "_status": "RATING_VISIBLE — 4.8★ confirmed but review count hidden behind Google Maps limited view. Individual reviews not accessible.",
+  "_checks": [
+    {
+      "timestamp": "2026-06-22T12:00:00Z",
+      "method": "browser_maps_cid_url",
+      "result": "RATING_VISIBLE",
+      "note": "CID URL loaded successfully. 4.8★ rating visible. 'You're seeing a limited view of Google Maps' — review count and individual reviews not accessible without Google sign-in. Previous known: 5 reviews at 4.8★ (as of 2026-06-19). Rating unchanged."
+    }
+  ]
+}
