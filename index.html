@@ -98,6 +98,23 @@ nav .nav-cta{font-size:0.8125rem!important;padding:0.5rem 1.25rem;background:var
 @media(max-width:768px){.portfolio-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.portfolio-grid{grid-template-columns:1fr}}
 
+/* MORE PROJECTS DROPDOWN */
+.more-projects{margin-top:1.5rem;text-align:center}
+.more-projects-toggle{display:inline-flex;align-items:center;gap:0.5rem;background:var(--bg-elevated);color:var(--text-secondary);padding:0.5rem 1.25rem;border-radius:8px;font-size:0.8125rem;font-weight:500;cursor:pointer;border:1px solid var(--border-subtle);font-family:var(--font);transition:all 0.2s}
+.more-projects-toggle:hover{color:var(--text-primary);border-color:var(--border-strong)}
+.more-projects-toggle .toggle-icon{transition:transform 0.2s;font-size:0.75rem}
+.more-projects.open .toggle-icon{transform:rotate(180deg)}
+.more-projects-grid{display:none;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem;max-width:400px;margin-inline:auto}
+.more-projects.open .more-projects-grid{display:grid}
+.portfolio-card-sm{background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:10px;overflow:hidden;transition:all 0.3s;display:block}
+.portfolio-card-sm:hover{transform:translateY(-2px);border-color:var(--border-strong);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+.thumb-sm{aspect-ratio:16/10;background:var(--bg-hover);display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.info-sm{padding:0.75rem 1rem}
+.info-sm .cat{font-size:0.625rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.05em;font-weight:600;margin-bottom:0.25rem;display:block}
+.info-sm h3{font-size:0.8125rem;margin-bottom:0.125rem}
+.info-sm .link{font-size:0.6875rem;color:var(--text-muted);display:inline-flex;align-items:center;gap:0.25rem;transition:color 0.2s}
+.info-sm .link:hover{color:var(--accent)}
+
 /* DASHBOARD SHOWCASE */
 .dash-section{background:var(--bg-elevated);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)}
 .dash-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-bottom:2.5rem}
@@ -261,18 +278,26 @@ footer p{font-size:0.8125rem;color:var(--text-muted)}
         <div class="thumb"><img src="assets/portfolio/elsbruilof.png" alt="Els Bruilof" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="overlay"></div></div>
         <div class="info"><span class="cat">Weddings & Events</span><h3>Els Bruilof</h3><span class="link">View Site →</span></div>
       </a>
-      <a href="https://the-boat-lab.vercel.app" target="_blank" rel="noopener" class="portfolio-card" data-cat="ecommerce">
-        <div class="thumb"><span style="font-size:1.5rem">🛒</span><div class="overlay"></div></div>
-        <div class="info"><span class="cat">E-Commerce</span><h3>The Boat Lab</h3><span class="link">View Site →</span></div>
-      </a>
-      <a href="https://omnia-pharma-redesign.vercel.app" target="_blank" rel="noopener" class="portfolio-card" data-cat="websites">
-        <div class="thumb"><span style="font-size:1.5rem">💊</span><div class="overlay"></div></div>
-        <div class="info"><span class="cat">Pharmaceutical</span><h3>Omnia Pharma</h3><span class="link">View Site →</span></div>
-      </a>
       <a href="https://euro-motor-clinic.vercel.app" target="_blank" rel="noopener" class="portfolio-card" data-cat="websites">
         <div class="thumb"><img src="assets/portfolio/euro-motor-clinic.png" alt="Euro Motor Clinic" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="overlay"></div></div>
         <div class="info"><span class="cat">Automotive</span><h3>Euro Motor Clinic</h3><span class="link">View Site →</span></div>
       </a>
+    </div>
+    <div class="more-projects">
+      <button class="more-projects-toggle" onclick="this.parentElement.classList.toggle('open')">
+        <span>More projects</span>
+        <span class="toggle-icon">▾</span>
+      </button>
+      <div class="more-projects-grid">
+        <a href="https://the-boat-lab.vercel.app" target="_blank" rel="noopener" class="portfolio-card-sm">
+          <div class="thumb-sm"><span>🛒</span></div>
+          <div class="info-sm"><span class="cat">E-Commerce</span><h3>The Boat Lab</h3><span class="link">View Site →</span></div>
+        </a>
+        <a href="https://omnia-pharma-redesign.vercel.app" target="_blank" rel="noopener" class="portfolio-card-sm">
+          <div class="thumb-sm"><span>💊</span></div>
+          <div class="info-sm"><span class="cat">Pharmaceutical</span><h3>Omnia Pharma</h3><span class="link">View Site →</span></div>
+        </a>
+      </div>
     </div>
   </div>
 </section>
