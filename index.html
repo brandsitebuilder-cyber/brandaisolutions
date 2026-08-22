@@ -158,7 +158,6 @@ nav .nav-cta{font-size:0.8125rem!important;padding:0.5rem 1.25rem;background:var
 .portfolio-card .info h3{font-size:1rem;margin-bottom:0.25rem}
 .portfolio-card .info .link{font-size:0.8125rem;color:var(--text-muted);display:inline-flex;align-items:center;gap:0.25rem;transition:color 0.2s}
 .portfolio-card .info .link:hover{color:var(--accent)}
-.portfolio-card .info .desc{font-size:0.8125rem;color:var(--text-muted)}
 .portfolio-card.hidden{display:none}
 @media(max-width:768px){.portfolio-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.portfolio-grid{grid-template-columns:1fr}}
@@ -273,7 +272,7 @@ footer p{font-size:0.8125rem;color:var(--text-muted)}
     <div class="nav-links">
       <a href="#services">Services</a>
       <a href="#portfolio">Work</a>
-      <a href="#dashboards">Dashboards</a>
+      <a href="#dashboards">Tools</a>
       <a href="#about">About</a>
       <a href="#contact" class="nav-cta">Start a Project</a>
     </div>
@@ -329,7 +328,6 @@ footer p{font-size:0.8125rem;color:var(--text-muted)}
       <button class="portfolio-tab" data-cat="websites">Websites</button>
       <button class="portfolio-tab" data-cat="dashboards">Dashboards</button>
       <button class="portfolio-tab" data-cat="ecommerce">E-Commerce</button>
-      <button class="portfolio-tab" data-cat="systems">Systems</button>
     </div>
     <div class="portfolio-grid">
       <a href="https://pieterhuizen-website.vercel.app" target="_blank" rel="noopener" class="portfolio-card" data-cat="websites">
@@ -352,14 +350,6 @@ footer p{font-size:0.8125rem;color:var(--text-muted)}
         <div class="thumb"><img src="assets/portfolio/ieprop.webp" alt="ieProp Property Listings" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="overlay"></div></div>
         <div class="info"><span class="cat">Property</span><h3>ieProp</h3><span class="link">View Site →</span></div>
       </a>
-      <div class="portfolio-card" data-cat="systems">
-        <div class="thumb"><img src="assets/portfolio/kleuter-ticketing.webp" alt="Kleuter Akademie Ticketing" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="overlay"></div></div>
-        <div class="info"><span class="cat">Event Ticketing</span><h3>Kleuter Akademie Ticketing</h3><span class="desc">Concert ticketing with seat selection, EFT &amp; SnapScan payments, and QR-code entry</span></div>
-      </div>
-      <div class="portfolio-card" data-cat="systems">
-        <div class="thumb"><img src="assets/portfolio/maf-roda-crm.webp" alt="MAF RODA CRM" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="overlay"></div></div>
-        <div class="info"><span class="cat">Packhouse CRM</span><h3>MAF RODA CRM</h3><span class="desc">Packhouse, visit, and project tracking with automated follow-up alerts</span></div>
-      </div>
     </div>
     <div class="more-projects">
       <button class="more-projects-toggle" onclick="this.parentElement.classList.toggle('open')">
@@ -384,8 +374,8 @@ footer p{font-size:0.8125rem;color:var(--text-muted)}
 <section class="dash-section" id="dashboards">
   <div class="container">
     <div class="section-header">
-      <h2>We Build Dashboards, Not Just Websites</h2>
-      <p>Custom tools that run your business — client portals, inventory systems, AI agents. Here's what we've built.</p>
+      <h2>We Build Tools, Not Just Websites</h2>
+      <p>Custom tools that run your business — client portals, inventory systems, ticketing, CRMs, AI agents. Here's what we've built.</p>
       <div class="accent-line"></div>
     </div>
     <div class="dash-grid">
@@ -431,6 +421,36 @@ footer p{font-size:0.8125rem;color:var(--text-muted)}
             <li>Client portal auth</li>
             <li>Payment status</li>
             <li>Supabase + Next.js</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dash-card">
+        <div class="frame">
+          <div class="mac-dots"><span></span><span></span><span></span></div>
+          <img src="assets/portfolio/kleuter-ticketing.webp" alt="Kleuter Akademie Ticketing" loading="lazy">
+        </div>
+        <div class="dash-info">
+          <h3>Kleuter Akademie — Event Ticketing</h3>
+          <ul>
+            <li>Seat selection</li>
+            <li>EFT &amp; SnapScan payments</li>
+            <li>QR-code entry</li>
+            <li>Admin dashboard</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dash-card">
+        <div class="frame">
+          <div class="mac-dots"><span></span><span></span><span></span></div>
+          <img src="assets/portfolio/maf-roda-crm.webp" alt="MAF RODA CRM" loading="lazy">
+        </div>
+        <div class="dash-info">
+          <h3>MAF RODA — Packhouse CRM</h3>
+          <ul>
+            <li>Client &amp; visit tracking</li>
+            <li>Project pipeline</li>
+            <li>Follow-up alerts</li>
+            <li>Role-based access</li>
           </ul>
         </div>
       </div>
