@@ -3,7 +3,7 @@
 ## Business Info
 - Business Name: Brand AI Solutions
 - Address: 4 Somer Road, Eversdal, Stellenberg, 7550
-- Phone: 082 746 1928
+- Phone: 072 096 6463
 - Website: https://brandaisolutions.co.za/
 - Email: marcus@brandaisolutions.co.za
 - Google Place ID: ChIJj9ROOuImSkfTA91rP9FTRA
