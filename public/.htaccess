@@ -3,3 +3,12 @@
 # expects application/manifest+json, so pin it here. Kept to a single directive on
 # purpose: any broader config risks the site's existing LiteSpeed defaults.
 AddType application/manifest+json .webmanifest
+
+# Canonical host + path: www and /index.html are duplicates of the canonical URL, so 301 them.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.brandaisolutions\.co\.za$ [NC]
+  RewriteRule ^(.*)$ https://brandaisolutions.co.za/$1 [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ / [R=301,L]
+</IfModule>
