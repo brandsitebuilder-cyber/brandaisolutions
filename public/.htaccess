@@ -1,0 +1,5 @@
+# Brand AI Solutions — MIME corrections
+# LiteSpeed (Hostinger) serves .webmanifest as text/plain. The web app manifest spec
+# expects application/manifest+json, so pin it here. Kept to a single directive on
+# purpose: any broader config risks the site's existing LiteSpeed defaults.
+AddType application/manifest+json .webmanifest
