@@ -158,7 +158,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;background:rg
 nav .container{display:flex;align-items:center;justify-content:space-between}
 nav .brand{font-size:1.25rem;font-weight:800;color:var(--text-primary);letter-spacing:-0.01em;display:inline-flex;align-items:center;gap:0.75rem}
 nav .brand-logo{width:44px;height:44px;border-radius:10px;border:1px solid rgba(200,150,62,0.55);box-shadow:0 4px 14px rgba(200,150,62,0.18);flex-shrink:0}
-nav .brand span{color:var(--accent)}
+nav .brand > span > span{color:var(--accent)}
+nav .brand{color:var(--text-primary)}
 nav .nav-links{display:flex;gap:2rem;align-items:center}
 nav .nav-links a{font-size:0.875rem;font-weight:500;color:var(--text-secondary);transition:color 0.2s}
 nav .nav-links a:hover{color:var(--text-primary)}
@@ -315,7 +316,7 @@ footer p{font-size:0.8125rem;color:var(--text-muted)}
 <!-- NAV -->
 <nav>
   <div class="container">
-    <a href="#hero" class="brand"><img class="brand-logo" src="assets/logo-badge.webp" alt="BrandAISolutions logo" width="176" height="176"><span>Brand <span>AI</span> Solutions</span></a>
+    <a href="#hero" class="brand"><img class="brand-logo" src="assets/logo-badge.webp" alt="BrandAISolutions logo" width="176" height="176"><span>Brand <span class="ai">AI</span> Solutions</span></a>
     <div class="nav-links">
       <a href="#services">Services</a>
       <a href="#portfolio">Work</a>
